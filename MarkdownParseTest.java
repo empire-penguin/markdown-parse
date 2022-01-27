@@ -17,9 +17,8 @@ public class MarkdownParseTest {
     @Test
     public void testGetLinks1() throws IOException {
         Path fileName = Path.of("test-file.md");
-	    String contents = Files.readString(fileName);
+        String contents= Files.readString(fileName);
         this.strList = MarkdownParse.getLinks(contents);
-
         assertEquals(this.strList, List.of("https://something.com", "some-page.html"));
     }
 
@@ -38,7 +37,7 @@ public class MarkdownParseTest {
 	    String contents = Files.readString(fileName);
         this.strList = MarkdownParse.getLinks(contents);
 
-        assertEquals(this.strList, List.of());
+        assertEquals(List.of(), this.strList);
     }
 
     @Test
@@ -47,7 +46,7 @@ public class MarkdownParseTest {
 	    String contents = Files.readString(fileName);
         this.strList = MarkdownParse.getLinks(contents);
 
-        assertEquals(this.strList, List.of());
+        assertEquals(List.of(), this.strList);
     }
 
     @Test
@@ -56,7 +55,7 @@ public class MarkdownParseTest {
 	    String contents = Files.readString(fileName);
         this.strList = MarkdownParse.getLinks(contents);
 
-        assertEquals(this.strList, List.of());
+        assertEquals(List.of(), this.strList);
     }
 
     @Test
@@ -65,7 +64,7 @@ public class MarkdownParseTest {
 	    String contents = Files.readString(fileName);
         this.strList = MarkdownParse.getLinks(contents);
 
-        assertEquals(this.strList, List.of("page.com"));
+        assertEquals(List.of("page.com"), this.strList );
     }
 
     @Test
@@ -74,7 +73,7 @@ public class MarkdownParseTest {
 	    String contents = Files.readString(fileName);
         this.strList = MarkdownParse.getLinks(contents);
 
-        assertEquals(this.strList, List.of());
+        assertEquals(List.of(), this.strList);
     }
 
     @Test
@@ -83,6 +82,6 @@ public class MarkdownParseTest {
 	    String contents = Files.readString(fileName);
         this.strList = MarkdownParse.getLinks(contents);
 
-        assertEquals(this.strList, List.of());
+        assertEquals(List.of(), this.strList);
     }
 }
