@@ -13,6 +13,7 @@ public class MarkdownParseTest {
     public void addition() {
         assertEquals(2, 1 + 1);
     }
+
     @Test
     public void testGetLinks1() throws IOException {
         Path fileName = Path.of("test-file.md");
@@ -24,7 +25,16 @@ public class MarkdownParseTest {
 
     @Test
     public void testGetLinks2() throws IOException {
-        Path fileName = Path.of("test2-file.md");
+        Path fileName = Path.of("test-file2.md");
+	    String contents = Files.readString(fileName);
+        this.strList = MarkdownParse.getLinks(contents);
+
+        assertEquals(this.strList, List.of("https://something.com", "some-page.html"));
+    }
+
+    @Test
+    public void testGetLinks3() throws IOException {
+        Path fileName = Path.of("test-file3.md");
 	    String contents = Files.readString(fileName);
         this.strList = MarkdownParse.getLinks(contents);
 
@@ -32,17 +42,44 @@ public class MarkdownParseTest {
     }
 
     @Test
-    public void testGetLinks3() throws IOException {
-        Path fileName = Path.of("test3-file.md");
+    public void testGetLink4() throws IOException {
+        Path fileName = Path.of("test-file4.md");
 	    String contents = Files.readString(fileName);
         this.strList = MarkdownParse.getLinks(contents);
 
-        assertEquals(this.strList, List.of("https://hello.com"));
+        assertEquals(this.strList, List.of());
     }
 
     @Test
-    public void testGetLink4() throws IOException {
-        Path fileName = Path.of("test4-file.md");
+    public void testGetLink5() throws IOException {
+        Path fileName = Path.of("test-file5.md");
+	    String contents = Files.readString(fileName);
+        this.strList = MarkdownParse.getLinks(contents);
+
+        assertEquals(this.strList, List.of());
+    }
+
+    @Test
+    public void testGetLink6() throws IOException {
+        Path fileName = Path.of("test-file6.md");
+	    String contents = Files.readString(fileName);
+        this.strList = MarkdownParse.getLinks(contents);
+
+        assertEquals(this.strList, List.of("page.com"));
+    }
+
+    @Test
+    public void testGetLink7() throws IOException {
+        Path fileName = Path.of("test-file7.md");
+	    String contents = Files.readString(fileName);
+        this.strList = MarkdownParse.getLinks(contents);
+
+        assertEquals(this.strList, List.of());
+    }
+
+    @Test
+    public void testGetLink8() throws IOException {
+        Path fileName = Path.of("test-file8.md");
 	    String contents = Files.readString(fileName);
         this.strList = MarkdownParse.getLinks(contents);
 
