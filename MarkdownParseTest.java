@@ -90,6 +90,6 @@ public class MarkdownParseTest {
         Path fileName = Path.of("test-file9.md");
         String contents= Files.readString(fileName);
         this.strList = MarkdownParse.getLinks(contents);
-        assertEquals(List.of("www.test.com"), this.strList);
+        assertEquals(List.of(), this.strList);
     }
 }

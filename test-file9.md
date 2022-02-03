@@ -1,3 +1,1 @@
-[[[[[()()()]]]]]
-
-[hello](www.test.com)
+[hello](test)
