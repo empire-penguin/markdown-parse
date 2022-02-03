@@ -70,7 +70,12 @@ public class MarkdownParse {
             if (check == false && (nextCloseBracket != nextOpenBracket + 1) && 
             (nextCloseBracket == openParen - 1) && 
             !markdown.substring(openParen + 1, closeParen).contains(" ") && 
-            markdown.substring(openParen + 1, closeParen).contains("www.")) {
+            (markdown.substring(openParen + 1, closeParen).contains("www.") ||
+            markdown.substring(openParen + 1, closeParen).contains("http://") || 
+            markdown.substring(openParen + 1, closeParen).contains(".com") || 
+            markdown.substring(openParen + 1, closeParen).contains(".html") || 
+            markdown.substring(openParen + 1, closeParen).contains("https://")
+            )) {
                 toReturn.add(markdown.substring(openParen + 1, closeParen));
             }
             
