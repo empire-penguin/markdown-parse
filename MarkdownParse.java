@@ -67,7 +67,10 @@ public class MarkdownParse {
                 } 
             }
 
-            if (check == false && (nextCloseBracket != nextOpenBracket + 1) && (nextCloseBracket == openParen - 1) && !markdown.substring(openParen + 1, closeParen).contains(" ")) {
+            if (check == false && (nextCloseBracket != nextOpenBracket + 1) && 
+            (nextCloseBracket == openParen - 1) && 
+            !markdown.substring(openParen + 1, closeParen).contains(" ") && 
+            markdown.substring(openParen + 1, closeParen).contains("www.")) {
                 toReturn.add(markdown.substring(openParen + 1, closeParen));
             }
             
