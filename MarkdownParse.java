@@ -26,6 +26,7 @@ public class MarkdownParse {
         //if we find a closing bracket/parenthesis and the top of the stack is 
         /*
         .apng
+        
         .avif
         .gif
         .jpg, .jpeg, .jfif, .pjpeg, .pjp
