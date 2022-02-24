@@ -14,6 +14,10 @@ public class MarkdownParseTest {
         
     }
 
+    @Test
+    public void testSubtraction(){
+    	assertEquals(0, 1-1);
+    }
 
     @Test
     public void testGetLinks1() throws IOException {
