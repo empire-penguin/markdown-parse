@@ -6,3 +6,6 @@ MarkdownParseTest.class: MarkdownParseTest.java MarkdownParse.class
 
 MarkdownParse.class: MarkdownParse.java
 	javac MarkdownParse.java
+
+debug-test: MarkdownParseTest.class
+	jdb -classpath lib/junit-4.13.2.jar:lib/hamcrest-core-1.3.jar:lib/commonmark-0.18.1.jar:. org.junit.runner.JUnitCore MarkdownParseTest
